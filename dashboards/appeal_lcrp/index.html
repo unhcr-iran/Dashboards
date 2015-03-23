@@ -1,0 +1,519 @@
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0' name='viewport'>
+<meta name="author" content="Aung Thu Win based on original work by Edouard Legoupil">
+<meta property="og:title" content="Lebanon Crisis Response Plan (LCRP) 2015"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="http://sandbox.raisunhcr.org/3w/unhcr-lebanon/appeal_lcrp/"/>
+<meta property="og:site_name" content="Lebanon Crisis Response Plan (LCRP) for 2015"/>
+<meta property="og:description" content="Lebanon Crisis Response Plan (LCRP) for 2015"/>
+
+<!-- Written on 15-Oct-2014 by Aung Thu Win, UNHCR Lebanon -->
+<!-- Credit
+The author would like to acknowledges and thank the original works of the following people without which this visualization would not have been possible.
+
+ Edouard Legoupil <https://github.com/edouard-legoupil/3W-Dashboard/>, 
+ Gordon Woodhull <https://github.com/dc-js/dc.js>
+ Kyaw Naing Win <https://github.com/knwin>
+ Interactive Data Visualization for the Web by Scott Murray <http://chimera.labs.oreilly.com/books/1230000000345>
+-->
+    <title>Lebanon Crisis Response Plan (LCRP)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/dc.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/3w-dashboard.css"/>
+    <!-- Add IntroJs styles and JS -->
+    <link rel="stylesheet" type="text/css" href="../css/introjs.min.css" >
+    <script type="text/javascript" src="../js/intro.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <!-- map the data to the GeoJSON object -->
+    <script src="../js/lbn-pcode.js"></script>
+	<script type="text/javascript">
+  
+  </script>
+    <link href="http://www.unhcr.org/favicon.ico" rel="icon" type="image/x-icon">
+</head>
+	<body id="target">
+		<div class="container-fluid" id="dashboard">
+			<div class="row" style="background-color:#ffffff;color:#0066a6;display">
+			<div class="col-md-1">
+				<center>
+				<br>
+				<img src="../../images/InterAgency_OfficalFlag.svg" width="210px"></img>
+				</center>
+			</div>
+			<div class="col-md-7">
+				<center>
+					<h4><strong>Lebanon Crisis Response Plan (LCRP) for 2015</strong></h4>
+					<strong>The following charts show the budget requirements <u>(in USD)</u> of the LCRP for all sectors. <br> Click on any of the graphs below to filter and slice the data.</strong>
+				</center>
+			<div class="row">
+				<center>More info on Lebanon <a href="http://data.unhcr.org/syrianrefugees/country.php?id=122" target="_blank" >here</a>.</center>
+			</div>
+			</div>
+			<div class="col-md-4">
+				<div class="col-md-5">
+					<br>
+					<div id="count-info" data-step="9" data-intro="This is the number of records you have selected." data-position='right'><strong><span class="filter-count "></span></strong> selected out of <span class="total-count "></span> records</div>
+					<div id="reset" data-step="10" data-intro="Click on this button to clear all the filters." data-position='right'><strong><a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll();dc.redrawAll();">Reset All</a></div>
+					<br>
+				</div>
+				<br>
+				<div class="col-md-4">
+					<br>
+					<a class="btn btn btn-success" href="javascript:void(0);" onclick="javascript:introJs().start();">Tutorial</a>
+				</div>			
+				<div class="col-md-3">
+				<div class="socialmedia" data-step="11" data-intro="Feel Free to share if you like it!" data-position='left'>
+					<table>
+					  <tr>
+						<td valign="middle" ><a href="http://www.facebook.com/sharer.php?u=http://sandbox.raisunhcr.org/3w/unhcr-lebanon/appeal_lcrp/" target="_blank"><img src="../../images/Facebook.png" style="height: 25px; width: 25px"/></a></td>
+						<td valign="middle"><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fsandbox.raisunhcr.org/3w/unhcr-lebanon/appeal_lcrp/&amp;media=http%3A%2F%2Fdata.unhcr.org/Lebanon/images/shelterdashboard.jpg" target="_blank" data-pin-do="buttonBookmark" ><img src="../../images/Pinterest.png" style="height: 28px; width: 28px"/></a></td>
+						<td valign="middle"><a href="https://twitter.com/intent/tweet?url=http://sandbox.raisunhcr.org/3w/unhcr-lebanon/appeal_lcrp/&text=%23Lebanon%20@Refugees" target="_blank"><img src="../../images/Twitter.png" style="height: 25px; width: 25px"/></a></td>
+						<td valign="middle"><a href="https://plus.google.com/share?&hl=en&url=http://sandbox.raisunhcr.org/3w/unhcr-lebanon/appeal_lcrp/" target="_blank"><img src="../../images/Google.png" style="height: 25px; width: 25px"/></a></td>
+					</tr>
+					</table>
+					<div class="col-md-4 col-md-offset-4">
+						<small><a href="https://github.com/UNHCR-Lebanon" target="_blank" >Source</a></small> <br>
+					</div>
+				</div>
+				</div>
+			</div>
+			</div>
+			<hr>
+			<div class="row">
+				<center>
+				<div class="col-md-3">
+					<div class="row" style="background-color:#ffffff;color:#ffffff;display">
+					-
+					</div>
+					<div class="row" style="background-color:#ff0000;color:#ffffff;display">
+						<center>
+						<div id="sum-of-all" data-step="1" data-intro="This is the TOTAL APPEAL." data-position='right'>
+						<center><h4><strong>TOTAL APPEAL: 2,143,255,082 USD</strong></h4></center>
+						</div>
+						</center>
+					</div>
+					<div class="row">
+						<center>
+						<div id="partner-count" data-step="2" data-intro="This is the TOTAL Number of Partners." data-position='right'>
+						<center><h5><strong>Number of Partners: 77</strong></h5></center>
+						</div>
+						</center>
+					</div>		
+					<div class="row">
+						<center>
+						<div id="sector" data-step="3" data-intro="Click on this row chart to filter by Sector." data-position='right'>
+							<center><h5><strong>Sector</strong></h5></center>
+						</div>
+						</center>
+					</div>
+					<div class="row">
+						<center>
+						<div id="category" data-step="4" data-intro="Click on this pie chart to filter by Category of appeal." data-position='right'>
+							<center><h5><strong>Category</strong></h5></center>
+						</div>
+						</center>
+					</div>	
+				</div>
+				<div class="col-md-2">
+					<div class="row">
+						<center>
+						<div id="partner" data-step="5" data-intro="Click on this row chart to filter by Partner." data-position='right'>
+							<center><h5><strong>Top 20 Partners</strong></h5></center>
+						</div>
+						</center>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="row">
+						<center>
+						<div id="outcome" data-step="6" data-intro="Click on this row chart to filter by Outcome/Objective." data-position='right'>
+							<center><h5><strong>Top 10 Outcomes/Objectives</strong></h5></center>
+						</div>
+						</center>
+					</div>
+					<div class="row">
+						<center>
+						<div id="output" data-step="7" data-intro="Click on this row chart to filter by Output." data-position='right'>
+							<center><h5><strong>Top 10 Outputs</strong></h5></center>
+						</div>
+						</center>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="row">
+						<center>
+						<div id="area" data-step="8" data-intro="Click on this bubble overlay map to filter by Area of Operation." data-position='right' style="background-image: url(../../images/quilt_verticle_50pc.png); height: 420px; width: 380px; border: 1px solid black;">
+							<center><h5><strong>Area of Operation</strong></h5></center>
+						</div>
+						</center>
+					</div>
+					<div class="row" style="background-color:#ffffff;color:#0066a6;">
+						<br>
+						<br>
+							For more information please contact Kerstin Karlstrom: karlstro@unhcr.org</a>.
+							UNHCR thanks all the partners for their data and cooperation.
+						<br>
+						<br>
+						<br>
+						<br>
+						<h6>Designed by Information Management Unit, UNHCR, Lebanon. </h6>
+						
+					</div>
+				</div>
+			</center>
+			</div>
+		</div>
+	<script type="text/javascript" src="../js/d3_002.js">
+	<!--script type="text/javascript" src="js/d3.v3.js"></script -->
+    <script type="text/javascript" src="../js/crossfilter.js"></script>
+    <!--script type="text/javascript" src="../js/dc.js"></script-->
+	<script type="text/javascript" src="http://dc-js.github.io/dc.js/js/dc.js"></script>
+    <script type="text/javascript" src="../js/d3.tip.min.js"></script>
+	<script>
+	
+	//Prepare to load in GeoJSON data for area
+	//var hardcodetotal =  1905889349;
+	var width = 400;
+	var height = 400;
+	//Create SVG element
+	var svg = d3.select("#area")
+				.append("svg")
+				.attr("width", width)
+				.attr("height", height)
+				.style("stroke-width", "0")
+				.style("stroke", "white");
+				
+	//Load in GeoJSON data for area
+	
+	d3.json("../geojson/lebanon-area-vertical.geojson", function(json) {
+		// create a first guess for the projection
+		var center = d3.geo.centroid(json)
+		var scale  = 150;
+		var offset = [width/2, height/2];
+		var projection = d3.geo.mercator().scale(scale).center(center)
+			.translate(offset);
+
+		// create the path
+		var path = d3.geo.path().projection(projection);
+
+		// using the path determine the bounds of the current map and use 
+		// these to determine better values for the scale and translation
+		var bounds  = path.bounds(json);
+		var hscale  = scale*(width) / (bounds[1][0] - bounds[0][0]); 
+		var vscale  = scale*(height - 75)/ (bounds[1][1] - bounds[0][1]); //in (height - 100), the - 100 is a specifically inserted to best view the map of Lebanon. Otherwise the map will be a bit out of bound
+		var scale   = (hscale < vscale) ? hscale : vscale;
+		var offset  = [width - (bounds[0][0] + bounds[1][0])/2,
+							height - (bounds[0][1] + bounds[1][1])/2]; 
+
+		// new projection
+		//projection = d3.geo.mercator().center(center)
+		//	.scale(scale).translate(offset);
+		//	path = path.projection(projection);
+		//path.projection(d3.geo.mercator().center([38.1,33.5]).scale(9000))
+		path.projection(d3.geo.mercator().center([38.2,30.9]).scale(11000))
+
+		// add a rectangle to see the bound of the svg
+		svg.append("rect").attr('width', width).attr('height', height)
+			.style('stroke', 'black').style('fill', 'none');
+
+		svg.selectAll("path").data(json.features).enter().append("path")
+			.attr("d", path)
+			.style("fill-opacity", 0.5)
+			.style('fill', 'gray')
+			.style("stroke-width", "2")
+			.style("stroke", "red")
+			
+			
+	});
+		
+	//Prepare to load data
+	var dataset;
+	
+	var sector_chart = dc.rowChart("#sector");
+	var category_chart = dc.pieChart("#category");
+	var area_chart = dc.bubbleOverlay("#area")
+		.svg(d3.select("#area svg"));
+	var partner_chart = dc.rowChart("#partner");
+	var outcome_chart = dc.rowChart("#outcome");
+	var output_chart = dc.rowChart("#output");
+	//var activity_chart = dc.rowChart("#activity");
+	//var sum_of_selected = dc.pieChart("#sum-of-selected");
+	
+	
+	d3.csv("data/3rp-lbn-ref-stb.csv", function(error, dataset) {
+		
+		var numberFormat = d3.format(",f");
+		
+		if (error) {  //If error is not null, something went wrong.
+			console.log(error);  //Log the error.
+        } else {      //If no error, the file loaded correctly. Yay!
+			//console.log(dataset);   //Log the data.
+      
+		var cf = crossfilter(dataset);
+		
+		cf.sector = cf.dimension(function(d) { return d.Sector; });
+		cf.category = cf.dimension(function(d) { return d.Category; });
+		cf.area = cf.dimension(function(d) { return d.Area; });
+		cf.partner = cf.dimension(function(d) { return d.Partner; });
+		cf.outcome = cf.dimension(function(d) { return d.Outcome; });
+		cf.output = cf.dimension(function(d) { return d.Output; });
+		//cf.activity = cf.dimension(function(d) { return d.Activity; });
+		//cf.dumptotal = cf.dimension(function(d) { return d.DumpTotal; });
+		cf.total = cf.dimension(function(d) { return d.Value; });
+		
+		var sector = cf.sector.group();
+		var category = cf.category.group();
+		var area = cf.area.group();
+		var partner = cf.partner.group();
+		var outcome = cf.outcome.group();
+		var output = cf.output.group();
+		//var activity = cf.activity.group();
+		var total = cf.total.group();
+		//var dumptotal = cf.dumptotal.group();
+		var all = cf.groupAll();
+				
+		var sectorByTotal = cf.sector.group().reduceSum(function (d) { return d.Value;} );
+		var categoryByTotal = cf.category.group().reduceSum(function (d) { return d.Value;} );
+		var areaByTotal = cf.area.group().reduceSum(function (d) { return d.Value;} );
+		var partnerByTotal = cf.partner.group().reduceSum(function (d) { return d.Value;} );
+		var outcomeByTotal = cf.outcome.group().reduceSum(function (d) { return d.Value;} );
+		var outputByTotal = cf.output.group().reduceSum(function (d) { return d.Value;} );
+		//var activityByTotal = cf.activity.group().reduceSum(function (d) { return d.Value;} );
+		//var dumptotalByTotal = cf.dumptotal.group().reduceSum(function (d) { return d.Value;} );
+		//var totalByTotal = cf.total.group().reduceSum(function (d) { return d.Value;} );
+						
+		function getFiltersValues() {
+                var filters = [
+                    { name: 'sector', value: sector_chart.filters()},
+					{ name: 'category', value: category_chart.filters()},
+					{ name: 'area', value: area_chart.filters()},
+					{ name: 'partner', value: partner_chart.filters()},
+					{ name: 'outcome', value: outcome_chart.filters()},
+					{ name: 'output', value: output_chart.filters()}//,
+					//{ name: 'area', value: sum_of_selected.filters()}
+					];
+
+                var recursiveEncoded = $.param( filters );
+                location.hash = recursiveEncoded;
+            }
+		function initFilters() {
+                // Get hash values
+                var parseHash = /^#sector=([A-Za-z0-9,_\-\/\s]*)&category=([A-Za-z0-9,_\-\/\s]*)&area=([A-Za-z0-9,_\-\/\s]*)&partner=([A-Za-z0-9,_\-\/\s]*)&outcome=([A-Za-z0-9,_\-\/\s]*)&output=([A-Za-z0-9,_\-\/\s]*)$/;
+                var parsed = parseHash.exec(decodeURIComponent(location.hash));
+                function filter(chart, rank) {  
+                    
+                    if (parsed[rank] == "") {
+                        chart.filter(null);
+                    }
+                    else {
+                        var filterValues = parsed[rank].split(",");
+                        for (var i = 0; i < filterValues.length; i++ ) {
+                            chart.filter(filterValues[i]);
+                        }
+                    }
+                }
+                if (parsed) {
+                    filter(sector_chart, 1);
+					filter(category_chart, 2);
+					filter(area_chart, 3);
+					filter(partner_chart, 4);
+					filter(outcome_chart, 5);
+					filter(output_chart, 6);
+					//filter(sum_of_selected, 8);
+                }
+            }
+		
+		    // tooltips for row chart
+			
+            var rowTip = d3.tip()
+                  .attr('class', 'd3-tip')
+                  .offset([-10, 0])
+                  .html(function (d) { return "<span style='color: #f0027f'>" +  d.key + "</span> : "  + numberFormat(d.value) + " USD"; });
+
+            // tooltips for pie chart
+            var pieTip = d3.tip()
+                  .attr('class', 'd3-tip')
+                  .offset([-10, 0])
+                  .html(function (d) { return "<span style='color: #f0027f'>" +  d.data.key + "</span> : "  + numberFormat(d.value) + " USD"; });
+
+            // tooltips for bar chart
+            var barTip = d3.tip()
+                  .attr('class', 'd3-tip')
+                  .offset([-10, 0])
+                  .html(function (d) { return "<span style='color: #f0027f'>" + d.data.key + "</span> : " + numberFormat(d.value) + " USD";});
+				  
+			// tooltips for bubble chart
+			
+			
+            var bubbleTip = d3.tip()
+                  .attr('class', 'd3-tip')
+                  .offset([-10, 0])
+                  .html(function (d) { return "<span style='color: #f0027f'>" + d.key + "</span> : " + numberFormat(d.value) + " USD";});
+			
+			/*
+			dc.numberDisplay("#sum-info")
+				.valueAccessor(function(d){return +d.value})
+				.dimension(cf)
+				.group(dumptotalByTotal);
+			*/
+					
+			sector_chart.width(350).height(325)
+                .dimension(cf.sector)
+                .group(sectorByTotal)
+                .elasticX(true)
+                .on("filtered", getFiltersValues)
+                .data(function(group) {
+                    return group.top(100);
+                })
+                //.colors(['#8db4e2'])
+				.colors(['#8db4e2'])
+                .colorDomain([0,0])
+                .colorAccessor(function(d, i){return 1;})
+                .xAxis().ticks(4).tickFormat(d3.format("s"));
+				
+			category_chart.width(200).height(175)
+                .dimension(cf.category)
+                .group(categoryByTotal)
+                .innerRadius(10)
+                .colors(['#ff0000', /* Affected lebanese */
+                        '#00ff00', /* Lebanese Returnees */
+						//'#0000ff', /* Palestanian Refugees from Syria */
+						//'#8db4e2', /* Syrian Refugees */
+                        ])
+                .colorDomain([0,2])
+                .renderLabel(true)
+                .colorAccessor(function(d, i){return i%2;})
+				.label(function(d) {
+					//return d.key + '\n ' + Math.floor(d.value*100/hardcodetotal) + '%';
+					return d.key;
+					})
+                .on("filtered", getFiltersValues);
+				
+			partner_chart.width(300).height(625)
+                .dimension(cf.partner)
+                .group(partnerByTotal)
+                .elasticX(true)
+                .on("filtered", getFiltersValues)
+                .data(function(group) {
+                    return group.top(20);
+                })
+                .colors(['#8db4e2'])
+                .colorDomain([0,0])
+                .colorAccessor(function(d, i){return 1;})
+                .xAxis().ticks(4).tickFormat(d3.format("s"));
+			
+			outcome_chart.width(550).height(300)
+                .dimension(cf.outcome)
+                .group(outcomeByTotal)
+                .elasticX(true)
+                .on("filtered", getFiltersValues)
+                .data(function(group) {
+                    return group.top(10);
+                })
+                //.colors(['#8db4e2'])
+				.colors(['#8db4e2'])
+                .colorDomain([0,0])
+                .colorAccessor(function(d, i){return 1;})
+                .xAxis().ticks(4).tickFormat(d3.format("s"));
+			
+			output_chart.width(550).height(290)
+                .dimension(cf.output)
+                .group(outputByTotal)
+                .elasticX(true)
+                .on("filtered", getFiltersValues)
+                .data(function(group) {
+                    return group.top(10);
+                })
+                //.colors(['#8db4e2'])
+				.colors(['#8db4e2'])
+                .colorDomain([0,0])
+                .colorAccessor(function(d, i){return 1;})
+                .xAxis().ticks(4).tickFormat(d3.format("s"));
+
+			area_chart.width(400).height(400)
+                .transitionDuration(1000) // (optional) define chart transition duration, :default = 1000
+				.dimension(cf.area) // set crossfilter dimension, dimension key should match the name retrieved in geo json layer
+				.group(areaByTotal) // set crossfilter group
+				//.colors(['#8db4e2'])
+				.colors(['#8db4ff'])
+				.colorDomain([0, 0])
+				.colorAccessor(function(d, i){return 1;})
+				.title(function(d) { return "area: " + d.key + "\nTotal:" + d.value;})
+				.r(d3.scale.linear().domain([0, 1500000000]))
+				.point("Akkar", 260, 45)
+				.point("Tripoli", 210, 90)
+				.point("Bekaa", 275, 150)
+				.point("Beirut", 150, 200)
+				.point("South", 120, 320)
+				.point("Countrywide", 310, 290)
+				.on("filtered", getFiltersValues)
+				.debug(false);
+			
+					dc.dataCount("#count-info")
+						.dimension(cf)
+						.group(all);					
+								
+					dc.renderAll();
+					
+					/* Customised infobox */
+					
+					d3.selectAll("g.row").call(rowTip);
+					d3.selectAll("g.row").on('mouseover', rowTip.show)
+						.on('mouseout', rowTip.hide);
+				
+					d3.selectAll(".pie-slice").call(pieTip);
+					d3.selectAll(".pie-slice").on('mouseover', pieTip.show)
+						.on('mouseout', pieTip.hide);				
+					
+					d3.selectAll(".node").call(bubbleTip);
+					d3.selectAll(".node").on('mouseover', bubbleTip.show)
+						.on('mouseout', bubbleTip.hide);			
+					
+			//});
+			
+			
+			//$('#loading').hide();
+			$('#dashboard').show();
+			
+			           			
+        }
+	});
+	
+	$(function () {
+
+			var specialElementHandlers = {
+				'#editor': function (element,renderer) {
+					return true;
+				}
+			};
+		 $('#cmd').click(function () {
+				var doc = new jsPDF();
+				doc.fromHTML($('#target').html(), 15, 15, {
+					'width': 170,'elementHandlers': specialElementHandlers
+				});
+				doc.save('sample-file.pdf');
+			});  
+		});
+
+	</script>	
+	
+    <script src="../js/bootstrap.js"></script>
+    <!-- Piwik-->
+    <script type="text/javascript">
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://data.unhcr.org/piwik/" : "http://data.unhcr.org/piwik/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+    </script><script type="text/javascript">
+    try {
+    var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 21);
+    piwikTracker.trackPageView();
+    piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+    </script><noscript><p><img src="http://data.unhcr.org/piwik/piwik.php?idsite=21" style="border:0" alt="" /></p></noscript>
+    <!-- End Piwik Tracking Code -->
+	
+	</body>
+</html>
