@@ -1,3 +1,3 @@
-unhcr-lebanon.github.io
+UNHCR-Lebanon
 ======================
-unhcr-lebanon.github.io
+UNHCR-Lebanon.github.io
